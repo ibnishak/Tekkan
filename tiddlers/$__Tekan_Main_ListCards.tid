@@ -1,5 +1,5 @@
 created: 20170925021442475
-modified: 20170927195729447
+modified: 20170927204621556
 tags: $:/Tekan/Main
 title: $:/Tekan/Main/ListCards
 type: text/vnd.tiddlywiki
@@ -20,7 +20,7 @@ type: text/vnd.tiddlywiki
                             	<span class="pop-over-header-title">List Actions</span>           
                             </div>
                             <div>
-                                <div class="pop-over-content u-fancy-scrollbar">
+                                <div class="pop-over-content">
                                     <div>
                                         <div>
                                             <ul class="pop-over-list">

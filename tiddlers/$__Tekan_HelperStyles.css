@@ -79,3 +79,9 @@ ul.pop-over-list.label-list li:hover {
 .checklist-text-width20 {
  width:20%; 
 }
+
+.pop-over-content ul.pop-over-list li {
+	box-shadow: none;
+	margin-bottom: 0;
+	padding: 5px 10px;
+}

@@ -1,5 +1,5 @@
 created: 20170926174034161
-modified: 20170927200349282
+modified: 20170927204059120
 tags: $:/Tikan/EditCardModal/SideBar
 title: $:/Tikan/EditCardModal/SideBar/LabelModal
 type: text/vnd.tiddlywiki
@@ -22,7 +22,7 @@ type: text/vnd.tiddlywiki
     	<span class="pop-over-header-title">Labels</span>         
     </div>
     <div>
-        <div class="pop-over-content u-fancy-scrollbar">
+        <div class="pop-over-content">
             <ul 
             class="pop-over-list label-list" 
             style="
@@ -110,7 +110,8 @@ type: text/vnd.tiddlywiki
                                 tiddler="$:/state/newlabeltitlecolor" 
                                 tag="input" 
                                 class="colour-picker-input" 
-                                type="color"/>
+                                type="color"
+                                value="#ec6"/>
                            
                             </div>
 						<$macrocall 
