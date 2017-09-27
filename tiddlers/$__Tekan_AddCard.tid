@@ -1,0 +1,41 @@
+created: 20170911035313861
+creator: Riz
+modified: 20170925062449631
+modifier: Riz
+tags: $:/Tekan/Main/ListFooter
+title: $:/Tekan/AddCard
+type: text/vnd.tiddlywiki
+
+\define newHereButtonTags()
+[[$(currentList)$]]
+\end
+
+\define addCard()
+<$set name="random" filter="[[]make[RANDOM(10)]]">
+<$action-createtiddler $basetitle=<<random>> text={{$:/NewNote}} tags=<<newHereButtonTags>> />
+</$set>
+<$action-listops $tiddler=<<currentList>> $subfilter="[{$:/NewNote}]"/>
+<$action-setfield $tiddler="$:/NewNote" text=""/>
+<$action-setfield $tiddler="$:/state/AddCard" text=""/>
+\end
+
+\define cancelCard()
+<$action-setfield $tiddler="$:/NewNote" text=""/>
+<$action-setfield $tiddler="$:/state/AddCard" text=""/>
+\end
+
+<$reveal type="nomatch" state="$:/state/AddCard" text=<<currentList>>>
+	<$button class="tc-btn-invisible" set="$:/state/AddCard" setTo=<<currentList>>>Add a card...</$button>
+</$reveal>
+
+<$reveal type="match" state="$:/state/AddCard" text=<<currentList>>>
+      	
+  <$keyboard key="ctrl+enter" actions=<<addCard>> tag="div">
+  <$edit-text  autoHeight="yes" focus="yes" placeholder="Add new note" default="New card" tiddler="$:/NewNote"/>
+  </$keyboard>
+		
+        <$button class="smallgreenbutton" actions=<<addCard>>>Add</$button>
+        <$button class="tc-btn-invisible" style="margin: 0 5px;"  actions=<<cancelCard>>>{{$:/core/images/close-button}}</$button>
+      	
+   
+</$reveal>

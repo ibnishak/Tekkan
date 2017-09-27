@@ -1,0 +1,70 @@
+.overflow-hidden {
+	overflow: hidden; 
+    overflow-wrap: break-word;
+    }
+.checklist-text-h {
+  overflow-x: hidden; 
+  overflow-y: scroll; 
+  overflow-wrap: break-word; 
+  height: 48px;
+  width: 70%;
+	}
+.view-comment-area {
+	margin-bottom: 3%;
+}
+.view-comment {
+	margin-left: 15%;
+}
+.view-comment .tc-btn-invisible.tc-btn-mini {
+	display: none;
+}
+.view-comment:hover .tc-btn-invisible.tc-btn-mini {
+	display: inline;
+}
+
+
+/***--POP UP--***/
+
+.pop-over-content {
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 0 10px 10px;
+}
+ul.pop-over-list {
+	list-style: none;
+	margin: 0;
+	line-height: 18px;
+	padding-left: 0;
+}
+ul.pop-over-list li {
+	box-shadow: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+ul.pop-over-list li:hover {
+	background-color: #298FCA;
+    color:#fff;
+    }
+ul.pop-over-list.label-list li:hover {
+	background-color: #fff;
+    color:#fff;
+    }
+
+/** ---**/
+
+button.tc-tag-label, span.tc-tag-label {
+	border-radius: 3px;
+}
+
+
+.label-list .tc-tag-list-item {
+	margin-right: 0;
+}
+
+.label-list .tc-btn-invisible:active .tc-tag-label {
+	background: #111 !important;
+	color: #fff !important;
+}
+.above-card {
+	margin-bottom: 5px;
+}

@@ -1,0 +1,35 @@
+author: Tobias Beer
+core-version: >=5.1.9
+created: 20170924153339088
+dependents: 
+description: Use the make filter to generate unique or random tiddler titles
+documentation: https://tobibeer.github.io/tw5-make
+list: readme
+modified: 20170924153339088
+plugin-type: plugin
+requires: 
+source: https://github.com/tobibeer/tw5-make
+title: $:/plugins/tobibeer/make
+type: application/json
+version: 0.6.0
+
+{
+    "tiddlers": {
+        "$:/plugins/tobibeer/make/filters.js": {
+            "text": "/*\\\r\ntitle: $:/plugins/tobibeer/make/filters.js\r\ntype: application/javascript\r\nmodule-type: filteroperator\r\n\r\na filter to generate tiddler titles\r\n\r\n@preserve\r\n\\*/\n(function(){\"use strict\";exports.make=function(e,t,i){var r,a,n,d,l,u,s,c,p=[],f=i.widget,m=i.wiki,o=[],x={inc:1,min:1,sep:\" \",tiddler:f?f.getVariable(\"currentTiddler\"):\"\"},g=/\\%TITLE\\%/gim,h=/\\%COUNT\\%/gim,w=/\\%DATE\\%/gim,T=/\\%UUID\\%/gim,D=/\\%MAX\\%/gim,k=/RANDOM\\((\\d*)\\)/gim,$=/\\%TIDDLER\\%/gim,b=/^\\s*([\\$\\w\\d\\-\\_\\/]*):(.*)(?:\\s*)$/,q=function(e,t){t=t||16;var i=\"\",r=function(){var e=Math.floor(Math.random()*62);return e<10?e:e<36?String.fromCharCode(e+55):String.fromCharCode(e+61)};while(t--){i+=r()}return i},N=function(e,t){return m.getTextReference(t,\"\",x.tiddler)},v=function(e,t){return f?f.getVariable(t):\"\"},C=function(e){return e.replace(/{{([^}]*)}}/gm,N).replace(/<<([^>]*)>>/gm,v)},E=function(e,t){var i,r=x.last||x.pad&&x.expr.indexOf(\"%count%\")<0?x.pad:0,a=m.getTiddler(x.tiddler),n=x.uniq===1?m.getTiddlerData(x.tiddler,{}):0,d=x.last&&x.lastTitle==t?x.last:r?0:-1;do{d++;i=t+(d>0?x.sep+(r?$tw.utils.pad(d,r):d):\"\")}while(e.indexOf(i)>=0||x.uniq===undefined&&m.tiddlerExists(i)||x.uniq===0&&a.hasField(i)||x.uniq===1&&$tw.utils.hop(n,i));if(r){x.last=d;x.lastTitle=t}return i};e(function(e,t){p.push(t)});d=!(p.length===1&&!p[0]);try{$tw.utils.each((t.operand||\"\").split(\"\\\\\"),function(e){var t;e=e.trim();if(e){l=b.exec(e);if(l){switch(l[1]){case\"min\":case\"max\":case\"inc\":t=parseInt(C(l[2]));if(isNaN(t)||t<1){t=1}x[l[1]]=t;break;case\"sep\":x.sep=l[2];break;case\"unique\":x.uniq=l[2]===\"field\"?0:1;break;case\"pad\":x.pad=parseInt(l[2]);break;case\"tiddler\":x.tiddler=l[2];break;case\"date-format\":x.dateFormat=l[2].trim();break}}else if(x.expr===undefined){x.expr=e}}});if(x.uniq===0){x.sep=x.sep===\" \"?\"\":x.sep.trim()}if(x.expr===undefined){x.expr=\"%tiddler%\"}if(x.pad!==undefined&&isNaN(x.pad)){x.pad=x.max?x.max.toString().length:2}if(d){x.max=x.max?Math.min(p.length,x.max):p.length}if(!x.max||x.max<x.min){x.max=x.min}s=new Date;n=s;x.count=x.min;u=k.test(x.expr);if(w.test(x.expr)){r=x.dateFormat?$tw.utils.formatDateString(s,x.dateFormat):$tw.utils.stringifyDate(s)}c=T.test(x.expr);do{a=C(x.expr);if(u){a=a.replace(k,q)}if(c){a=a.replace(T,$tw.utils.uuid())}a=E(o,a.replace($,x.tiddler).replace(g,d?p[x.count-1]:x.tiddler).replace(D,x.max).replace(h,x.pad?$tw.utils.pad(x.count,x.pad):x.count).replace(w,r));o.push(a);x.count=x.count+x.inc;if(x.count%500===0){n=new Date}}while(x.count<=x.max&&n-s<5e3)}catch(I){return[\"Error in make filter:\\n\"+I]}return o}})();",
+            "title": "$:/plugins/tobibeer/make/filters.js",
+            "type": "application/javascript",
+            "module-type": "filteroperator"
+        },
+        "$:/plugins/tobibeer/make/readme": {
+            "title": "$:/plugins/tobibeer/make/readme",
+            "text": "Provides the filter `[make[]]` to create unique, even random titles or text.\n\n; Placeholders\r\n: `%date%` — a datestamp of the current time (format: `YYYY0MM0DD0hh0mm0ss`)\r\n: `%count%` — current count (see options: ''min'', ''inc'', ''max'')\r\n: `%max%` — max number generated\r\n: `%tiddler%` — defined ''tiddler'' or current\r\n: `%title%` — input title\r\n: when not operating on input titles, the (current) tiddler title\n\n: `<<variable>>`\r\n: `{{text!!reference}}`\r\n: `random()` — a 16 letter random string, or short, e.g.: `random(8)`\r\n: `%uuid%` — a universally unique identifier\r\n; Options\r\n: `min:1` — starting number\r\n: `inc:1` — increment\r\n: `max:2` — max number\r\n: `sep:-` — separator before unique count\r\n: `date-format:<dateFormatString>` — for `%date%`\r\n: `tiddler:foo` — used for ''unique'' and text-references\r\n: `unique:field` — unique field-name instead of global titles\r\n: `unique:index` — unique data tiddler index\r\n: `pad:max` — zero-pad count to length of max\r\n: `pad:5` — zero-pad count to 5 digits: 00001\n\n; Documentation / examples / demos...\r\n: http://tobibeer.github.io/tw5-plugins#make"
+        },
+        "$:/plugins/tobibeer/make/utils.js": {
+            "text": "/*\\\r\ntitle: $:/plugins/tobibeer/make/utils.js\r\ntype: application/javascript\r\nmodule-type: utils\r\n\r\nUtility function to create a uuid\r\n\r\n@preserve\r\n\\*/\n(function(){\"use strict\";exports.uuid=function(){var r=[];for(var t=0;t<256;t++){r[t]=(t<16?\"0\":\"\")+t.toString(16)}function n(){var t=Math.random()*4294967295|0,n=Math.random()*4294967295|0,a=Math.random()*4294967295|0,o=Math.random()*4294967295|0;return r[t&255]+r[t>>8&255]+r[t>>16&255]+r[t>>24&255]+\"-\"+r[n&255]+r[n>>8&255]+\"-\"+r[n>>16&15|64]+r[n>>24&255]+\"-\"+r[a&63|128]+r[a>>8&255]+\"-\"+r[a>>16&255]+r[a>>24&255]+r[o&255]+r[o>>8&255]+r[o>>16&255]+r[o>>24&255]}return n()}})();",
+            "title": "$:/plugins/tobibeer/make/utils.js",
+            "type": "application/javascript",
+            "module-type": "utils"
+        }
+    }
+}

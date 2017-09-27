@@ -1,0 +1,21 @@
+created: 20170923171302946
+modified: 20170923174713019
+tags: $:/Tekan/Button $:/Tekan/NavBarButtons
+title: $:/Tekan/NavBarButtons/DeleteBoard
+type: text/vnd.tiddlywiki
+
+<$button tooltip="Delete board" popup="$:/state/deleteboardpopup" style="fill:#fff;">{{$:/core/images/delete-button}}</$button>
+<$reveal type="popup" class="tc-popup-keep" state="$:/state/deleteboardpopup">
+<div class="md-modal md-effect-1 md-show">
+<div class="md-content">
+				<h3>delete Board<$button tag="span" style="right:0;position: absolute;padding: 0 3%;fill:#fff;cursor:pointer">{{$:/core/images/close-button}}<$action-deletetiddler $tiddler="$:/state/deleteboardpopup"/></$button></h3>
+				<div>
+					<p>This will delete the board, along with all its lists, its cards, items in card checkboxes</p>
+					<p>Are you sure?</p>
+                    <div class="mdbuttons">
+					<$button actions=<<deleteboard>> class="md-close">Delete</$button>
+					</div>
+				</div>
+			</div>
+		</div>
+        </$reveal>

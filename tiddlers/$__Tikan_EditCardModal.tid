@@ -1,0 +1,46 @@
+created: 20170919125005908
+modified: 20170926153640688
+priority: 20170912000000000
+tags: $:/Tekan
+title: $:/Tikan/EditCardModal
+type: text/vnd.tiddlywiki
+
+\define checklisttag()
+[[$(currentCard)$]]
+\end
+
+\define commentTag()
+[[$(currentCard)$]] $:/Comment
+\end
+
+\define addchecklistitem()
+<$set name="random" filter="[[]make[RANDOM(10)]]">
+<$action-createtiddler $basetitle=<<random>> text={{$:/state/checklistitem}} tags=<<checklisttag>>/>
+</$set>
+<$action-setfield $tiddler="$:/state/checklistitem" text=""/>
+\end
+
+\define addComment()
+<$set name="random" filter="[[]make[RANDOM(10)]]">
+<$action-createtiddler $basetitle=<<random>> text={{$:/state/editcardComments}} tags=<<commentTag>>/>
+</$set>
+<$action-setfield $tiddler="$:/state/editcardComments" text=""/>
+\end
+
+\define archivechecklist()
+<$list filter="[tag<currentCard>tag[done]!tag[archive]]">
+<$action-listops $tags="archive"/>
+</$list>
+\end
+<div class="window-header">
+	{{||$:/Tikan/EditCardModal/Header}}
+</div>
+
+<div class="window-main-col">
+  {{||$:/Tikan/EditCardModal/AddComment}}
+  {{||$:/Tikan/EditCardModal/Checklist}}
+</div>
+
+<div class="window-sidebar" style="left: 864px; top: 0px;">
+  {{||$:/Tikan/EditCardModal/SideBar}}
+</div>

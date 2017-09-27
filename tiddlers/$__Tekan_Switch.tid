@@ -1,0 +1,15 @@
+created: 20170910184159665
+creator: Riz
+modified: 20170923174727672
+modifier: Riz
+tags: $:/Tekan $:/tags/PageControls
+title: $:/Tekan/Switch
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible">{{$:/core/images/opacity}}
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]">
+<$action-setfield tags="TwelloMode"/>
+</$list>
+<$action-setfield $tiddler="$:/Tekan/Main" tags="$:/tags/PageTemplate"/>
+<$action-listops $tiddler="$:/Tekan/Substyles" $tags="$:/tags/Stylesheet"/>
+</$button>

@@ -1,0 +1,8 @@
+created: 20170925060139004
+modified: 20170925060341659
+title: $:/config/FileSystemPaths
+type: text/vnd.tiddlywiki
+
+[is[system]removeprefix[$:/]addprefix[_system/]]
+[tag[$:/tags/Tekanboard]addprefix[Boards/]]
+[!has[draft.of]]

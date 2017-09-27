@@ -1,0 +1,31 @@
+created: 20170925150831760
+modified: 20170925182536053
+tags: $:/Tikan/EditCardModal
+title: $:/Tikan/EditCardModal/Header
+type: text/vnd.tiddlywiki
+
+<span class="window-header-icon icon-lg icon-card"></span>
+	<div class="window-title">
+    <$reveal state="$:/state/editcardtitle" type="nomatch" text="show">
+        <$tiddler tiddler=<<currentCard>>>
+    	<$button 
+                		class="tc-btn-invisible" 
+                    	style="text-align:left; font-weight:bold;font-size:18px; width:100%" 
+                        set="$:/state/editcardtitle" setTo="show">
+                <$wikify 
+                    name="cardtext" 
+                    type="text/x-markdown" 
+                    text={{!!text}} 
+                    output="html">
+                    <<cardtext>>
+                </$wikify>
+        </$button>
+        </$tiddler>
+    </$reveal>
+    <$reveal state="$:/state/editcardtitle" type="match" text="show">
+    	<$edit-text class="mod-card-back-title overflow-hidden" tiddler=<<currentCard>> rows="2" minHeight="auto" focus="yes"/>
+    </$reveal>
+	<div>in list "<b><$view tiddler=<<currentList>> field="text"/></b>"
+    	<$list filter="[<currentCard>tag[archive]]">{{Archived||$:/core/ui/TagTemplate}}</$list>	
+    </div>
+	</div>

@@ -1,0 +1,28 @@
+created: 20170925013244412
+modified: 20170927124619596
+tags: $:/Tikan/EditCardModal
+title: $:/Tikan/EditCardModal/Checklist
+type: text/vnd.tiddlywiki
+
+<div class="checklistarea">
+					<div class="window-module-title window-module-title-no-divider">
+					    	<span class="window-module-title-icon icon-lg icon-comment"></span>
+					        <h3>Checklist</h3>
+					</div>
+				    	<div class="u-gutter">
+                        	    <$keyboard key="enter" actions=<<addchecklistitem>> tag="span">
+						      <$edit-text class="checklist-new-item-text checklist-text-h" placeholder="Add an item…"  tag="input" tiddler="$:/state/checklistitem" default="New item"/>
+                              </$keyboard>
+						      <$button class="smallgreenbutton" actions=<<addchecklistitem>>>Add</$button>
+				       </div>
+						<div class="u-gutter">
+						            <$list filter="[tag<currentCard>!tag[done]!tag[archive]!tag[$:/Comment]]">
+								            <$checkbox tag="done"> <$view field="text"/></$checkbox>
+								            </$list>
+
+								            <$list filter="[tag<currentCard>tag[done]!tag[archive]]">
+								            <$checkbox tag="done"> ~~<$view field="text"/>~~</$checkbox>
+						            </$list>
+						            
+						</div>
+			</div>

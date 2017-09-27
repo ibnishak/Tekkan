@@ -1,0 +1,18 @@
+created: 20170913174601878
+creator: Riz
+modified: 20170923174924494
+modifier: Riz
+tags: $:/Tekan
+title: $:/Tekan/NavBar
+type: text/vnd.tiddlywiki
+
+<nav class="navbar app">
+    	<div class="header-user-left">
+    		<span class="header-btn-icon">{{$:/Tekan/BoardSelect}}</span>
+		</div>
+
+		<div class="header-user">
+<span class="header-btn-icon">{{$:/Tekan/NavBarButtons}}</span>
+		</div>
+	</nav>
+<nav class="navbar board"><$set name="currentBoard" filter="[{$:/Tekan/CurrentBoard}minlength[1]]" value={{$:/Tekan/CurrentBoard}} emptyValue="You need to either create a board or switch to an existing one"><$text text=<<currentBoard>>/></$set></nav>

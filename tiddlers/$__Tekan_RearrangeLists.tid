@@ -1,0 +1,31 @@
+created: 20170923180034788
+modified: 20170923180138650
+tags: $:/Tekan
+title: $:/Tekan/RearrangeLists
+type: text/vnd.tiddlywiki
+
+<$reveal state="$:/state/rearrlist" type="match" text="show">
+   		<div class="list">
+   		 <header>Lists of <<currentBoard>></header>
+	 		<ul>
+	 		
+			            <$list filter="[tag<currentBoard>sortby{!!list}]">
+					<div style="position: relative;">
+			                <$droppable actions=<<droplist>>>
+			                        <div class="tc-droppable-placeholder">
+			                        &nbsp;
+			                        </div>
+			                      <div>
+			                      		<$draggable tiddler=<<currentTiddler>> tag="li"> <$transclude tiddler=<<currentList>> field="caption"><$view tiddler=<<currentList>> field="title"/> </$transclude>
+			                            	</$draggable>
+			                      </div>
+			                </$droppable>
+			                </div>
+			            </$list>
+			            
+	            	
+			</ul>
+        
+   		 	<footer><$button class="smallgreenbutton" set="$:/state/rearrlist" setTo="">Done</$button></footer>
+   		</div>
+   		</$reveal>

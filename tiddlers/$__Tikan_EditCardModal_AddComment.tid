@@ -1,0 +1,45 @@
+created: 20170925013404285
+list: $:/Tikan/EditCardModal/Header $:/Tikan/EditCardModal/AddComment $:/Tikan/EditCardModal/Checklist $:/Tikan/EditCardModal/SideBar
+modified: 20170926152747682
+tags: $:/Tikan/EditCardModal
+title: $:/Tikan/EditCardModal/AddComment
+type: text/vnd.tiddlywiki
+
+	<div class="view-comment-area">
+    <$list filter="[tag<currentCard>tag[$:/Comment]]">    
+    <li class="view-comment">{{!!text}}
+    	<$button
+        class="tc-btn-invisible tc-btn-mini animated fadeIn">{{$:/core/images/delete-button}}
+        <$action-deletetiddler $tiddler=<<currentTiddler>>/>
+        </$button>
+    </li>
+    </$list>
+    </div>
+
+<div class="window-module add-comment-section">
+    	<div class="window-module-title window-module-title-no-divider">
+	    	<span class="window-module-title-icon icon-lg icon-comment"></span>
+	        <h3>Add Comment</h3>
+	</div>
+    
+    
+    <div class="new-comment">
+    
+            <div class="comment-frame">
+                <div class="comment-box">
+  				<$edit-text 
+                	class="comment-box-input" 
+                    placeholder="Write a comment…" 
+                    style="overflow: hidden; overflow-wrap: break-word; height: 75px;" 
+                    tiddler="$:/state/editcardComments"          
+                    default="No Comments"  
+                    tag="textarea" 
+                    autoHeight="yes" 
+                    minHeight="auto"
+                    />
+                 </div>
+                 
+            </div>
+           <$button class="smallgreenbutton" actions=<<addComment>>>Save</$button>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+created: 20170918191921058
+creator: Riz
+modified: 20170927171859817
+modifier: Riz
+tags: $:/Tekan
+title: $:/Tekan/Main
+type: text/vnd.tiddlywiki
+
+\define currentListTag()
+[[$(currentList)$]]
+\end
+
+\define drop-actions()
+<$action-listops $tiddler=<<actionTiddler>> $tags="-[tag<currentBoard>]"/>
+<$action-listops $tiddler=<<actionTiddler>> $tags=<<currentListTag>>/>
+<$list filter="[tag<currentBoard>]">
+<$action-listops $subfilter="-[<actionTiddler>]"/>
+</$list>
+<$action-listops $tiddler=<<currentList>> $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
+<$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+\define currentBoardTags()
+[[$(currentBoard)$]]
+\end
+
+\define droplist()
+<$action-listops $tiddler=<<currentBoard>> $subfilter="+[insertbefore:currentTiddler<actionTiddler>]"/>
+<$action-setfield $tiddler=<<actionTiddler>> $field="tags" $value=<<currentBoardTags>>/>
+<$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+\define cardeditops()
+<$action-sendmessage $message="tm-modal" $param="$:/Tikan/EditCardModal" currentList=<<currentList>> currentCard=<<currentTiddler>>/>
+\end
+
+\define popupstate()
+$:/state/listops/$(currentList)$
+\end
+
+\define deletelist()
+<$list filter="[tag<currentList>]">
+<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+</$list>
+<$action-deletetiddler $tiddler=<<currentList>>/>
+<$action-listops $tiddler=<<currentBoard>> $subfilter="+[remove<currentList>]"/>
+<$action-sendmessage $message="tm-auto-save-wiki"/>
+\end
+
+\define archivelist()
+<$list filter="[tag<currentList>]">
+<$action-listops $tags="archive"/>
+</$list>
+<$action-setfield $tiddler=<<currentList>> list=""/>
+\end
+
+
+<style>
+.icon-edit::before {
+content: "&#x270e;";
+}
+.icon-overflow-menu-horizontal::before {
+	content: "&#xb7;&#xb7;&#xb7;";
+}
+</style>
+
+<div class="ui">
+	{{$:/Tekan/NavBar}}
+	<div class="lists">
+    <$set name="currentBoard" value={{$:/Tekan/CurrentBoard}}>
+    <$list filter="[tag<currentBoard>!has[draft.of]]" variable="currentList">
+		<div class="list">
+         {{||$:/Tekan/Main/ListCards}}
+       	 {{||$:/Tekan/Main/ListFooter}} 
+		</div>
+    </$list>
+      	{{||$:/Tekan/AddList}}
+   		{{|| $:/Tekan/RearrangeLists}}
+  	</$set>
+	</div>
+</div>

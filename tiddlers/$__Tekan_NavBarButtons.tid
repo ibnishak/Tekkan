@@ -1,0 +1,39 @@
+created: 20170910185559552
+creator: Riz
+list: $:/Tekan/NavBoard/Buttons/RearrangeLists $:/Tekan/NavBoard/Buttons/DeleteBoard $:/Tekan/NavBarButtons/AddNewBoard $:/Tekan/NavBarButtons/SwitchBack
+modified: 20170923174652166
+modifier: Riz
+tags: $:/Tekan/NavBar
+title: $:/Tekan/NavBarButtons
+type: text/vnd.tiddlywiki
+
+\define AddNewBoard()
+<$action-createtiddler $basetitle={{$:/state/boardNewTitle}} tags="$:/tags/Tekanboard"/>
+<$action-setfield $tiddler="$:/Tekan/CurrentBoard" $value={{$:/state/boardNewTitle}}/>
+<$action-setfield $tiddler="$:/state/boardNewTitle" text=""/>
+\end
+
+\define deleteboard()
+<$set name="currentBoard" value={{$:/Tekan/CurrentBoard}}>
+<$list filter="[tag<currentBoard>]" variable="currentList">
+<$action-deletetiddler $tiddler=<<currentList>>/>
+<$list filter="[tag<currentList>]" variable="currentCard">
+<$action-deletetiddler $tiddler=<<currentCard>>/>
+<$list filter="[tag<currentCard>]" variable="currentChecklistitem">
+<$action-deletetiddler $tiddler=<<currentChecklistitem>>/>
+</$list>
+</$list>
+</$list>
+<$action-deletetiddler $tiddler=<<currentBoard>>/>
+</$set>
+<$action-setfield $tiddler="$:/Tekan/CurrentBoard" text=""/>
+<$action-deletetiddler $tiddler="$:/state/deleteboardpopup"/>
+\end
+
+<$set name="currentBoard" value={{$:/Tekan/CurrentBoard}}>
+<$list filter="[tag[$:/Tekan/Button]]"><$transclude/></$list>
+</$set>
+
+
+
+

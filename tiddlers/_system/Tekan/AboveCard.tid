@@ -1,0 +1,11 @@
+created: 20170927114942793
+modified: 20170927120952521
+tags: $:/Tekan/Main/ListCards
+title: $:/Tekan/AboveCard
+type: text/vnd.tiddlywiki
+
+<div class="above-card">
+<$reveal state=!!label type="nomatch" text="">
+<$macrocall $name="tag-pill" tag={{!!label}}/>
+</$reveal>
+</div>

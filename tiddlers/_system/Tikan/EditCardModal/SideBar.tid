@@ -1,0 +1,45 @@
+created: 20170925145058583
+modified: 20170927105634561
+tags: $:/Tikan/EditCardModal
+title: $:/Tikan/EditCardModal/SideBar
+type: text/vnd.tiddlywiki
+
+<div class="window-module u-clearfix">
+		<$button class="button-link" style="background: #EE6E73;color: #eee;">Delete
+			<$action-deletetiddler $tiddler=<<currentCard>>/>
+            <$action-deletetiddler $filter="[tag<currentCard>]"/>
+			<$action-sendmessage $message="tm-close-tiddler"/>
+            <$action-listops $tiddler=<<currentList>> $subfilter="+[remove<currentCard>]"/>
+		</$button>
+		<$button class="button-link">Archive Card
+			<$action-listops $tiddler=<<currentCard>> $tags="archive"/>
+            <$action-listops $tiddler=<<currentList>> $subfilter="+[remove<currentCard>]"/>
+		</$button>
+        <$button 
+        	class="button-link" 
+            actions=<<archivechecklist>>
+            tooltip="""Archive "done" items from checklist""">
+            Archive Checklist
+        </$button>
+        <$button 
+        	class="button-link">
+           		<$action-sendmessage 
+                $message="tm-modal" 
+                $param="$:/Tikan/EditCardModal/SideBar/LabelModal" 
+                currentCard=<<currentCard>>/>
+            Label
+ 		</$button>
+        <$edit-date 
+        	class="button-link"
+            attributes="$:/Tikan/EditCardModal/SideBar/DueDateAttributes"
+            tiddler=<<currentCard>>
+            field="priority"
+            placeholder="Due Date"/>
+		<$button 
+        	class="button-link">
+            Done
+			<$action-sendmessage $message="tm-close-tiddler"/>
+            <$action-setfield $tiddler="$:/state/editcardtitle" text=""/>
+		</$button>
+        
+</div>

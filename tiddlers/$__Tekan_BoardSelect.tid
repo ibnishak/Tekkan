@@ -1,0 +1,25 @@
+created: 20170910194902289
+modified: 20170923174552394
+tags: $:/Tekan/NavBar
+title: $:/Tekan/BoardSelect
+type: text/vnd.tiddlywiki
+
+\define setboard()
+<$action-setfield $tiddler="$:/Tekan/CurrentBoard" text=<<currentTiddler>>/>
+\end
+
+
+<$button popup=<<qualify "$:/state/popup/board">>>Board</$button>
+<$reveal state=<<qualify "$:/state/popup/board">> type="popup" position="below" animate="yes">
+    <div class="whitebgdropdown">
+        <$list filter="[tag[$:/tags/Tekanboard]!has[draft.of]]">
+        <div style="height:30px;"></div>
+<$button style="background: #fff;" actions=<<setboard>>>
+            <div class="compact-board-tile-wrapper">
+                <span class="simplesquare" style="background-color: #0079BF;">&nbsp;</span>
+                <span class="compact-board-tile-fade">{{!!title}}</span>
+            </div>
+</$button>
+        </$list>
+    </div>
+</$reveal>

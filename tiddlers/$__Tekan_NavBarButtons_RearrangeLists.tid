@@ -1,0 +1,7 @@
+created: 20170923171113538
+modified: 20170923174713205
+tags: $:/Tekan/NavBarButtons $:/Tekan/Button
+title: $:/Tekan/NavBarButtons/RearrangeLists
+type: text/vnd.tiddlywiki
+
+<$button tooltip="Rearrange lists" set="$:/state/rearrlist" setTo="show">A</$button>

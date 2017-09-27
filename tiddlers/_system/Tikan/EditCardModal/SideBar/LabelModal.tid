@@ -1,0 +1,125 @@
+created: 20170926174034161
+modified: 20170927171750999
+tags: $:/Tikan/EditCardModal/SideBar
+title: $:/Tikan/EditCardModal/SideBar/LabelModal
+type: text/vnd.tiddlywiki
+
+\define addLabel()
+<$action-setfield $tiddler=<<currentCard>> $field="label" $value=<<currentTiddler>>/>
+\end
+
+\define removeLabel()
+<$list $filter="[tag[toRemove]]">
+<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+<$list filter="[label<currentTiddler>]">
+<$action-setfield label=""/>
+</$list>
+</$list>
+\end
+ 
+ <div class="pop-over" style="right: auto;top: auto;position: relative;width: 100%;height: 100%;">
+    <div class="pop-over-header">
+    	<span class="pop-over-header-title">Labels</span>         
+    </div>
+    <div>
+        <div class="pop-over-content u-fancy-scrollbar">
+            <ul 
+            class="pop-over-list label-list" 
+            style="
+            	display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: row;
+                flex-direction: row;
+                flex-wrap:wrap;"
+                padding: 20px;>
+            <$list filter="[tag[$:/Label]]">
+              <$reveal                 
+                type="match" 
+                state="$:/state/labelaction" 
+                text="showRemove">
+                 <$checkbox tag="toRemove"/>
+              </$reveal>
+             <$button 
+             class="tc-btn-invisible" 
+             style="margin-right: 15px;margin-bottom:15px;"
+             actions=<<addLabel>>>
+             <$macrocall $name="tag-pill" tag={{!!title}}/>
+             </$button>             
+              </$list>
+               
+            </ul>
+            <div>
+            <$reveal                 
+                type="match" 
+                state="$:/state/labelaction" 
+                text="showRemove">
+                  <$button 
+             		class="smallgreenbutton"
+                    actions=<<removeLabel>>>                    
+                    Remove
+                    </$button>  
+                    <$button 
+             		class="smallgreenbutton"
+                    set="$:/state/labelaction"
+                    setTo="">
+                    Close
+                    </$button>  
+              </$reveal>  
+              </div>
+            <hr style="border: none;border-bottom: 1px solid #ccc;">
+             <ul>
+             <$reveal type="match" state="$:/state/labelaction" text="">
+           		<$button 
+                	class="tc-btn-invisible" 
+                    style="margin-right:10%"
+                    set="$:/state/labelaction" 
+                    setTo="showAdd">
+                    Add Label
+                </$button>
+                <$button 
+                	class="tc-btn-invisible" 
+                    set="$:/state/labelaction" 
+                    setTo="showRemove">
+                    Remove Label
+                </$button>
+             </$reveal>
+
+           		<$reveal                 
+                type="match" 
+                state="$:/state/labelaction" 
+                text="showAdd">
+<div>
+					Title: <$edit-text 
+							class="checklist-new-item-text checklist-text-h" 
+                            tiddler="$:/state/newlabeltitle" 
+                            focus="yes" 
+                            tag="input" 
+                            placeholder='New label' 
+                            default=''/></div>
+<div>
+		Background colour: <$edit-text 
+							class="checklist-new-item-text checklist-text-h" 
+                            tiddler='$:/state/newlabeltitlecolor' 
+                            tag='input' 
+                            placeholder='(unset)' 
+                            default=''/>
+                            </div>
+						<$macrocall 
+                        	$name='colour-picker' 
+                            actions="<$action-setfield $tiddler='$:/state/newlabeltitlecolor' $value=<<colour-picker-value>>/>"/>
+							<$set name="bgcolor" value={{$:/state/newlabeltitlecolor}}>
+           		<$button class="smallgreenbutton">
+           		<$action-createtiddler $basetitle={{$:/state/newlabeltitle}} color=<<bgcolor>> tags="$:/Label"/>
+                <$action-setfield $tiddler="$:/state/labelaction" text=""/>
+                Save
+           		</$button>
+           		</$set>
+           		</$reveal>
+           
+            </ul>            
+        </div>
+    </div>    
+</div>
+    <$button class="button-link" style="float: right;width: 40%;"> 
+    <$action-sendmessage $message="tm-close-tiddler"/>Close
+    </$button>

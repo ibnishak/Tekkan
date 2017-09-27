@@ -1,0 +1,16 @@
+created: 20170925021515022
+modified: 20170925021516434
+tags: $:/Tekan/Main
+title: $:/Tekan/Main/ListFooter
+type: text/vnd.tiddlywiki
+
+<$tiddler tiddler="">
+            <div class="footer">
+						<$droppable actions=<<drop-actions>>  tag="div">
+								<div class="tc-droppable-placeholder">
+								&nbsp;
+								</div>
+								<footer>{{||$:/Tekan/AddCard}}</footer>
+						</$droppable>
+            </div>
+            </$tiddler>

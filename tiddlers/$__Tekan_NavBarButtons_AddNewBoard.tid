@@ -1,0 +1,28 @@
+created: 20170923171442102
+modified: 20170923174713096
+tags: $:/Tekan/NavBarButtons $:/Tekan/Button
+title: $:/Tekan/NavBarButtons/AddNewBoard
+type: text/vnd.tiddlywiki
+
+<$button tooltip="Add new board" popup="$:/state/newboardstate">
++</$button>
+<$reveal state="$:/state/newboardstate" type="popup" class="tc-popup-keep" position="below" text="showthepopup">
+<div class="pop-over">
+	<div>
+		<div class="pop-over-header">
+			<span class="pop-over-header-title">Create Board</span>
+			<a href="#" class="pop-over-header-close-btn icon-sm icon-close"></a>
+		</div>
+
+
+		<div class="pop-over-content" style="max-height: 323px;">
+		<div>
+			<label>Title</label>
+                        <$edit-text class="list-name-input" tiddler="$:/state/boardNewTitle"  placeholder="What are you organizing?" default="New board" tag="input"/>
+
+			<div><$button style="background: -webkit-linear-gradient(top,#5AAC44 0,#519839 100%);background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);" set="$:/state/newboardstate" setTo="" actions=<<AddNewBoard>>>Create New Board</$button></div>
+		</div>
+		</div>
+	</div>
+</div>
+</$reveal>
