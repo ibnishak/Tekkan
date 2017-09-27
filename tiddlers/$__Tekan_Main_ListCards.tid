@@ -1,5 +1,5 @@
 created: 20170925021442475
-modified: 20170927120556551
+modified: 20170927195729447
 tags: $:/Tekan/Main
 title: $:/Tekan/Main/ListCards
 type: text/vnd.tiddlywiki
@@ -50,7 +50,7 @@ type: text/vnd.tiddlywiki
 
 <ul>
           <$list filter="[tag<currentList>!tag[archive]sortby{!!list}!has[draft.of]]" storyview="pop">
-  						<div style="position: relative;" class="animated flipInX">
+  						<div style="position: relative;">
                   <$droppable actions=<<drop-actions>>>
                         <div class="tc-droppable-placeholder">
                         &nbsp;

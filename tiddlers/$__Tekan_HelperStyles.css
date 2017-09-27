@@ -52,13 +52,17 @@ ul.pop-over-list.label-list li:hover {
 
 /** ---**/
 
-button.tc-tag-label, span.tc-tag-label {
+.label-list button.tc-tag-label, .label-list span.tc-tag-label {
 	border-radius: 3px;
+	width: 100%;
+	min-height: 30px;
+	line-height: 30px;
 }
 
 
 .label-list .tc-tag-list-item {
 	margin-right: 0;
+	width: 100%;
 }
 
 .label-list .tc-btn-invisible:active .tc-tag-label {
@@ -67,4 +71,11 @@ button.tc-tag-label, span.tc-tag-label {
 }
 .above-card {
 	margin-bottom: 5px;
+}
+
+.colour-picker-input{
+  width:40%;
+}
+.checklist-text-width20 {
+ width:20%; 
 }

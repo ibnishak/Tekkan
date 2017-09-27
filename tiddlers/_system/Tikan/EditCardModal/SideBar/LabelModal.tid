@@ -1,5 +1,5 @@
 created: 20170926174034161
-modified: 20170927171750999
+modified: 20170927200349282
 tags: $:/Tikan/EditCardModal/SideBar
 title: $:/Tikan/EditCardModal/SideBar/LabelModal
 type: text/vnd.tiddlywiki
@@ -9,12 +9,12 @@ type: text/vnd.tiddlywiki
 \end
 
 \define removeLabel()
-<$list $filter="[tag[toRemove]]">
-<$action-deletetiddler $tiddler=<<currentTiddler>>/>
+<$list filter="[tag[toRemove]]">
 <$list filter="[label<currentTiddler>]">
 <$action-setfield label=""/>
 </$list>
 </$list>
+<$action-deletetiddler $filter="[tag[toRemove]]"/>
 \end
  
  <div class="pop-over" style="right: auto;top: auto;position: relative;width: 100%;height: 100%;">
@@ -31,7 +31,8 @@ type: text/vnd.tiddlywiki
                 -webkit-flex-direction: row;
                 flex-direction: row;
                 flex-wrap:wrap;"
-                padding: 20px;>
+                padding: 20px;
+                line-height:30px;>
             <$list filter="[tag[$:/Label]]">
               <$reveal                 
                 type="match" 
@@ -41,7 +42,7 @@ type: text/vnd.tiddlywiki
               </$reveal>
              <$button 
              class="tc-btn-invisible" 
-             style="margin-right: 15px;margin-bottom:15px;"
+             style="margin-right: 15px;margin-bottom:15px;min-width: 20%;"
              actions=<<addLabel>>>
              <$macrocall $name="tag-pill" tag={{!!title}}/>
              </$button>             
@@ -87,31 +88,43 @@ type: text/vnd.tiddlywiki
            		<$reveal                 
                 type="match" 
                 state="$:/state/labelaction" 
-                text="showAdd">
+                text="showAdd"
+                >
 <div>
 					Title: <$edit-text 
-							class="checklist-new-item-text checklist-text-h" 
+							class="checklist-new-item-text checklist-text-h"                             
                             tiddler="$:/state/newlabeltitle" 
                             focus="yes" 
                             tag="input" 
                             placeholder='New label' 
                             default=''/></div>
 <div>
-		Background colour: <$edit-text 
-							class="checklist-new-item-text checklist-text-h" 
-                            tiddler='$:/state/newlabeltitlecolor' 
-                            tag='input' 
-                            placeholder='(unset)' 
-                            default=''/>
+		Background colour:  <$edit-text 
+                                tiddler="$:/state/newlabeltitlecolor" 
+                                tag="input" 
+                                class="checklist-new-item-text checklist-text-width20"
+                                default=""
+                                placeholder="#ec6"
+                                />
+        						<$edit-text 
+                                tiddler="$:/state/newlabeltitlecolor" 
+                                tag="input" 
+                                class="colour-picker-input" 
+                                type="color"/>
+                           
                             </div>
 						<$macrocall 
-                        	$name='colour-picker' 
+                        	$name='colour-picker-mod' 
                             actions="<$action-setfield $tiddler='$:/state/newlabeltitlecolor' $value=<<colour-picker-value>>/>"/>
 							<$set name="bgcolor" value={{$:/state/newlabeltitlecolor}}>
            		<$button class="smallgreenbutton">
            		<$action-createtiddler $basetitle={{$:/state/newlabeltitle}} color=<<bgcolor>> tags="$:/Label"/>
                 <$action-setfield $tiddler="$:/state/labelaction" text=""/>
                 Save
+           		</$button>
+                <$button class="smallgreenbutton">           		
+                <$action-setfield $tiddler="$:/state/labelaction" text=""/>
+                Cancel
            		</$button>
            		</$set>
            		</$reveal>
@@ -120,6 +133,7 @@ type: text/vnd.tiddlywiki
         </div>
     </div>    
 </div>
-    <$button class="button-link" style="float: right;width: 40%;"> 
-    <$action-sendmessage $message="tm-close-tiddler"/>Close
+    <$button class="button-link" style="float: right;width: 40%;margin-bottom: 20px;"> 
+    <$action-sendmessage $message="tm-close-tiddler"/>
+     <$action-setfield $tiddler="$:/state/labelaction" text=""/>Close
     </$button>

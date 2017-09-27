@@ -1,0 +1,52 @@
+created: 20170927193452159
+modified: 20170927200608947
+tags: $:/Tikan/EditCardModal/SideBar/LabelModal $:/tags/Macro
+title: $:/core/macros/colour-picker-mod
+type: text/vnd.tiddlywiki
+
+\define colour-picker-update-recent()
+<$action-listops
+	$tiddler="$:/config/ColourPicker/Recent"
+	$subfilter="$(colour-picker-value)$ [list[$:/config/ColourPicker/Recent]remove[$(colour-picker-value)$]] +[limit[8]]"
+/>
+\end
+
+\define colour-picker-inner(actions)
+<$button tag="a" tooltip="""$(colour-picker-value)$""">
+
+$(colour-picker-update-recent)$
+
+$actions$
+
+<div style="background-color: $(colour-picker-value)$; width: 100%; height: 100%; border-radius: 50%;"/>
+
+</$button>
+\end
+
+\define colour-picker-recent-inner(actions)
+<$set name="colour-picker-value" value="$(recentColour)$">
+<$macrocall $name="colour-picker-inner" actions="""$actions$"""/>
+</$set>
+\end
+
+\define colour-picker-recent(actions)
+{{$:/language/ColourPicker/Recent}} <$list filter="[list[$:/config/ColourPicker/Recent]]" variable="recentColour">
+<$macrocall $name="colour-picker-recent-inner" actions="""$actions$"""/></$list>
+\end
+
+\define colour-picker-mod(actions)
+<div class="tc-colour-chooser">
+
+<$macrocall $name="colour-picker-recent" actions="""$actions$"""/>
+
+---
+
+<$list filter="Crimson  PaleVioletRed HotPink DeepPink MediumVioletRed Orchid Fuchsia DarkMagenta Purple MediumOrchid DarkViolet DarkOrchid Indigo BlueViolet MediumPurple MediumSlateBlue SlateBlue DarkSlateBlue Blue MediumBlue MidnightBlue DarkBlue Navy RoyalBlue CornflowerBlue LightSteelBlue LightSlateGrey SlateGrey DodgerBlue SteelBlue LightSkyBlue SkyBlue DeepSkyBlue LightBlue PowderBlue CadetBlue Cyan DarkTurquoise DarkSlateGrey DarkCyan Teal MediumTurquoise LightSeaGreen Turquoise Aquamarine MediumAquamarine MediumSpringGreen SpringGreen MediumSeaGreen SeaGreen LightGreen PaleGreen DarkSeaGreen LimeGreen Lime ForestGreen Green DarkGreen Chartreuse LawnGreen GreenYellow DarkOliveGreen YellowGreen OliveDrab Yellow Olive DarkKhaki  Khaki Gold Goldenrod DarkGoldenrod  Orange Tan BurlyWood Bisque DarkOrange Peru PeachPuff SandyBrown Chocolate SaddleBrown  Sienna LightSalmon Coral OrangeRed DarkSalmon Tomato Salmon LightCoral RosyBrown IndianRed Red Brown FireBrick DarkRed Maroon  Silver DarkGrey Grey DimGrey Black" variable="colour-picker-value">
+<$macrocall $name="colour-picker-inner" actions="""$actions$"""/>
+</$list>
+
+---
+
+</div>
+
+\end
