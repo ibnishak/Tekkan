@@ -1,6 +1,6 @@
-created: 20170918191921058
+created: 20170928085715345
 creator: Riz
-modified: 20170927204201262
+modified: 20170928183412246
 modifier: Riz
 tags: $:/Tekan
 title: $:/Tekan/Main
@@ -75,7 +75,9 @@ content: "&#x270e;";
 		</div>
     </$list>
       	{{||$:/Tekan/AddList}}
-   		{{|| $:/Tekan/RearrangeLists}}
+   		{{||$:/Tekan/RearrangeLists}}
+        {{||$:/Tekan/Import}}
   	</$set>
 	</div>
+    {{$:/Tekan/Sidebar}}
 </div>

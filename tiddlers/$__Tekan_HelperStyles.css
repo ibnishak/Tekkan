@@ -85,3 +85,52 @@ ul.pop-over-list.label-list li:hover {
 	margin-bottom: 0;
 	padding: 5px 10px;
 }
+
+
+ /*Add new list button*/
+.semitransparent {
+	background: rgba(0,0,0,.12) !important;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	height: auto;
+	margin: 0 5px;
+	min-height: 30px;
+	padding: 4px;
+	width: 270px; }
+
+.tc-btn-invisible.sidebarbtn {
+	position: absolute;
+	right: 0;
+	font-size: 10px;
+	text-decoration: underline;
+	padding-right: 8px;
+	color: #f6f6f6;
+}
+
+.sidebar {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 20%;
+	background-color: #EDEFF0;
+	z-index: 100;
+	color: #333;
+	padding: 5px 20px;
+}
+
+
+.sidebar .header {
+	line-height: 20px;
+	margin: 13px 30px 9pt;
+	overflow: hidden;
+	text-align: center;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.palettebtn {
+	padding-top: 20%;
+}

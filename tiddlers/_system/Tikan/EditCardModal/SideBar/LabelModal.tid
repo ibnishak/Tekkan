@@ -1,5 +1,5 @@
 created: 20170926174034161
-modified: 20170927204059120
+modified: 20170928183345494
 tags: $:/Tikan/EditCardModal/SideBar
 title: $:/Tikan/EditCardModal/SideBar/LabelModal
 type: text/vnd.tiddlywiki
@@ -84,8 +84,7 @@ type: text/vnd.tiddlywiki
                     Remove Label
                 </$button>
              </$reveal>
-
-           		<$reveal                 
+<$reveal                 
                 type="match" 
                 state="$:/state/labelaction" 
                 text="showAdd"
@@ -129,6 +128,7 @@ type: text/vnd.tiddlywiki
            		</$button>
            		</$set>
            		</$reveal>
+           		
            
             </ul>            
         </div>

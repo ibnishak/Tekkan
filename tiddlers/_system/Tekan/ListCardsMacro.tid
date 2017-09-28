@@ -1,0 +1,34 @@
+created: 20170928090827486
+modified: 20170928091346839
+tags: $:/tags/Macro $:/Tekan/Main/ListCards
+title: $:/Tekan/ListCardsMacro
+type: text/vnd.tiddlywiki
+
+\define listcards(listfilter:"[tag<currentList>!tag[archive]sortby{!!list}!has[draft.of]]")
+ <$list filter="$listfilter$">
+  						<div style="position: relative;">
+                  <$droppable actions=<<drop-actions>>>
+                        <div class="tc-droppable-placeholder">
+                        &nbsp;
+                        </div>
+                        <div>
+                        	<$draggable class="cardview" tiddler=<<currentTiddler>> tag="li">
+                            {{||$:/Tekan/AboveCard}}
+                              <$wikify 
+                              	name="cardtext" 
+                                type="text/x-markdown" 
+                                text={{!!text}} 
+                                output="html">
+                                <<cardtext>>
+                              </$wikify>
+                              <$button 
+                              	tag="span" 
+                                class="icon-sm icon-edit list-card-operation listitem" 
+                                actions=<<cardeditops>>>
+                              </$button>                            
+                            </$draggable>
+                       </div>
+                  </$droppable>
+              </div>
+          </$list>
+\end

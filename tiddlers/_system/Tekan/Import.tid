@@ -1,0 +1,19 @@
+created: 20170928110030358
+modified: 20170928113236918
+tags: 
+title: $:/Tekan/Import
+type: text/vnd.tiddlywiki
+
+<$reveal state="$:/state/importtek" type="match" text="show">
+<div class="list">
+   		 <header>Import</header>
+	 		<ul>
+           <li><$browse/></li>
+           
+           <$reveal state="$:/Import!!status" type="match" text="pending"> <li><$tiddler tiddler="$:/Import">{{||$:/core/ui/ViewTemplate/import}}
+</$tiddler></li></$reveal>
+</ul>
+<footer><$button class="smallgreenbutton" set="$:/state/importtek" setTo="">Done</$button></footer>
+</div>
+
+</$reveal>

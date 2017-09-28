@@ -1,0 +1,10 @@
+created: 20170928093130205
+modified: 20170928093239584
+tags: $:/Tekan/ListSorterButton
+title: $:/Tekan/ListSorterButton/Listed
+type: text/vnd.tiddlywiki
+
+<$button 
+tag="li" 
+actions="""<$action-setfield $tiddler=<<currentList>> filter="[tag<currentList>!tag[archive]sortby{!!list}!has[draft.of]]"/>""">
+Manual/Listed</$button>

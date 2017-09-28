@@ -1,0 +1,9 @@
+created: 20170928125017920
+modified: 20170928125331819
+tags: $:/Tekan $:/tags/Macro
+title: $:/Tekan/CurrentBoardMacro
+type: text/vnd.tiddlywiki
+
+\define currentBoard()
+{{$:/Tekan/CurrentBoard}}
+\end

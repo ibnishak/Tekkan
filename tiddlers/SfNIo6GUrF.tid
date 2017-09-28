@@ -1,7 +1,8 @@
 caption: Done
 created: 20170927180427741
-list: Zv86Bp0muL vorHmQ0RCV
-modified: 20170927204113399
+filter: [tag<currentList>!tag[archive]sortby{!!list}!has[draft.of]]
+list: Hello [[Import don]] cGra86IfCX IHyFd8aNly vorHmQ0RCV
+modified: 20170928181512505
 tags: [[To do board]]
 title: SfNIo6GUrF
 type: text/vnd.tiddlywiki

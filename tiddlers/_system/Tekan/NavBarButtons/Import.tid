@@ -1,0 +1,8 @@
+created: 20170928110702640
+modified: 20170928111522077
+tags: $:/Tekan/NavBarButtons $:/Tekan/Button
+title: $:/Tekan/NavBarButtons/Import
+type: text/vnd.tiddlywiki
+
+<$button tooltip="Import Tiddlers" set="$:/state/importtek" setTo="show" style="fill:#fff;">{{$:/core/images/import-button}}
+</$button>

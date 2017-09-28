@@ -1,5 +1,5 @@
 created: 20170925021442475
-modified: 20170927204621556
+modified: 20170928092922895
 tags: $:/Tekan/Main
 title: $:/Tekan/Main/ListCards
 type: text/vnd.tiddlywiki
@@ -24,16 +24,14 @@ type: text/vnd.tiddlywiki
                                     <div>
                                         <div>
                                             <ul class="pop-over-list">
-                                                <$button 
-                                                    tag="li" 
-                                                    actions=<<deletelist>>>
-                                                    Delete List
-                                                </$button>
-                                                <$button 
-                                                    tag="li" 
-                                                    actions=<<archivelist>>>
-                                                    Archive List
-                                                </$button>                
+                                               <$list filter="[tag[$:/Tekan/ListOpsButton]]">
+                                               <$transclude/>
+                                               </$list>
+                                               <hr style="border:none;border-bottom:1px solid lightgray">
+                                               <div style="font-size:smaller;color:#838c91;">sort</div>
+                                               <$list filter="[tag[$:/Tekan/ListSorterButton]]">
+                                               <$transclude/>
+                                               </$list>
                                             </ul>
                                             <hr style="border: none;border-bottom: 1px solid #ccc;">                  
                                         </div>
@@ -49,30 +47,7 @@ type: text/vnd.tiddlywiki
 
 
 <ul>
-          <$list filter="[tag<currentList>!tag[archive]sortby{!!list}!has[draft.of]]" storyview="pop">
-  						<div style="position: relative;">
-                  <$droppable actions=<<drop-actions>>>
-                        <div class="tc-droppable-placeholder">
-                        &nbsp;
-                        </div>
-                        <div>
-                        	<$draggable class="cardview" tiddler=<<currentTiddler>> tag="li">
-                            {{||$:/Tekan/AboveCard}}
-                              <$wikify 
-                              	name="cardtext" 
-                                type="text/x-markdown" 
-                                text={{!!text}} 
-                                output="html">
-                                <<cardtext>>
-                              </$wikify>
-                              <$button 
-                              	tag="span" 
-                                class="icon-sm icon-edit list-card-operation listitem" 
-                                actions=<<cardeditops>>>
-                              </$button>                            
-                            </$draggable>
-                       </div>
-                  </$droppable>
-              </div>
-          </$list>
+<$set name="listfiltervar" filter="[<currentList>get[filter]]">
+         <$macrocall $name="listcards" listfilter=<<listfiltervar>>/>
+         </$set>
 			</ul>

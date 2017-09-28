@@ -1,0 +1,41 @@
+created: 20170928170709949
+modified: 20170928180101754
+tags: $:/Tekan
+title: $:/Tekan/Sidebar
+type: text/vnd.tiddlywiki
+
+\define themebutton(bg:"black")
+<$button class="tc-btn-invisible">
+<div style="background:$bg$;height:60px;width:60px;border-radius:4px;"></div>
+<$action-setfield $tiddler=<<currentBoard>> $field=theme $value=<<currentTiddler>>/>
+</$button>
+\end
+
+
+<$reveal state="$:/state/tekansidebar" type="match" text="show" class="animated fadeIn">
+
+<div class="sidebar">
+<div class="header"><span class="sidebartitle">Settings</span><$button class="tc-btn-invisible" style="float:right;fill:#acacac;" set="$:/state/tekansidebar" setTo="">{{$:/core/images/close-button}}</$button></div>
+
+<div class="settingsbutton">
+<$reveal state="$;/state/scrolly" type="match" text="show">
+<$button set="$;/state/scrolly" setTo="" class="button-link">Scroll Y
+<$action-listops $tiddler="$:/Tekan/Palette/ScrollYStyles" $tags="$:/tags/Stylesheet"/>
+</$button>
+</$reveal>
+<$reveal state="$;/state/scrolly" type="nomatch" text="show">
+<$button set="$;/state/scrolly" setTo="show" class="button-link">Scroll X
+<$action-listops $tiddler="$:/Tekan/Palette/ScrollYStyles" $tags="-$:/tags/Stylesheet"/>
+</$button>
+</$reveal>
+</div>
+
+<div class="palettebtn">
+<$set name="currentBoard" value={{$:/Tekan/CurrentBoard}}>
+<$list filter="[tag[$:/Tekan/Palette]]">
+<$macrocall $name="themebutton" bg={{##bg}}/>
+</$list>
+</$set>
+</div>
+</div>
+</$reveal>

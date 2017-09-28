@@ -226,17 +226,7 @@ footer textarea {
 	margin: 5px 1px;}
  
 
- /*Add new list button*/
-.semitransparent {
-	background: rgba(0,0,0,.12);
-	border-radius: 3px;
-	color: #fff;
-	cursor: pointer;
-	height: auto;
-	margin: 0 5px;
-	min-height: 30px;
-	padding: 4px;
-	width: 270px; }
+
  
  /* Any button*/
 .semitransparentborderless {

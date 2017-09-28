@@ -1,0 +1,11 @@
+created: 20170928092405891
+modified: 20170928093048920
+tags: $:/Tekan/ListSorterButton
+title: $:/Tekan/ListSorterButton/Alphabet
+type: text/vnd.tiddlywiki
+
+<$button 
+tag="li" 
+actions="""<$action-setfield $tiddler=<<currentList>> filter="[tag<currentList>!tag[archive]sort[text]!has[draft.of]]"/>""">
+Alphabetically
+</$button>

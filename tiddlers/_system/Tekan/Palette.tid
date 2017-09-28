@@ -1,0 +1,38 @@
+color: #d90828
+created: 20170928131913041
+list-after: $:/Tekan/Substyles
+modified: 20170928170654112
+tags: $:/Tekan $:/tags/Stylesheet
+title: $:/Tekan/Palette
+type: text/vnd.tiddlywiki
+
+\define theme(bg:"#0079BF" navbg:"#0067A3" listbg:"#e2e4e6" textcolor:"#333" cardbg:"#fff")
+.ui {
+	background-color: $bg$;
+}
+
+.navbar.app {
+	background-color: $navbg$;
+}
+.list > * {
+	background-color: $listbg$;
+	color: $textcolor$;
+}
+
+.list ul li {
+    background-color: $cardbg$;
+    }
+
+\end
+
+
+<$list filter="[{$:/Tekan/CurrentBoard}get[theme]]">
+<$macrocall $name="theme" 
+		bg={{##bg}} 
+        navbg={{##navbg}} 
+        listbg={{##listbg}} 
+        textcolor={{##textcolor}} 
+        card={{##cardbg}}/>
+</$list>
+
+

@@ -1,0 +1,16 @@
+created: 20170928091840264
+modified: 20170928092522585
+tags: $:/Tekan/ListOpsButton
+title: $:/Tekan/ListOpsButton/Default
+type: text/vnd.tiddlywiki
+
+ <$button 
+                                                    tag="li" 
+                                                    actions=<<deletelist>>>
+                                                    Delete List
+                                                </$button>
+                                                <$button 
+                                                    tag="li" 
+                                                    actions=<<archivelist>>>
+                                                    Archive List
+                                                </$button>       

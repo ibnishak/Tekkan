@@ -1,0 +1,16 @@
+created: 20170928175303149
+modified: 20170928181902280
+tags: 
+title: $:/Tekan/Palette/ScrollYStyles
+type: text/vnd.tiddlywiki
+
+.lists {
+    flex-wrap:wrap;
+    }
+.ui {
+	overflow-x: hidden;
+}
+.lists {
+	flex-wrap: wrap;
+	margin-right: -16px;
+}
