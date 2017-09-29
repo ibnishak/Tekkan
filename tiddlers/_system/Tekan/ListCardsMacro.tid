@@ -1,5 +1,5 @@
 created: 20170928090827486
-modified: 20170928091346839
+modified: 20170928194914486
 tags: $:/tags/Macro $:/Tekan/Main/ListCards
 title: $:/Tekan/ListCardsMacro
 type: text/vnd.tiddlywiki
@@ -24,7 +24,8 @@ type: text/vnd.tiddlywiki
                               <$button 
                               	tag="span" 
                                 class="icon-sm icon-edit list-card-operation listitem" 
-                                actions=<<cardeditops>>>
+                                >
+                                <$action-sendmessage $message="tm-modal" $param="$:/Tikan/EditCardModal" currentList=<<currentList>> currentCard=<<currentTiddler>>/>
                               </$button>                            
                             </$draggable>
                        </div>

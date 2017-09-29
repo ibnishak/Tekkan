@@ -1,0 +1,49 @@
+caption: New Label
+created: 20170928184403391
+modified: 20170928192522946
+tags: [[ $:/Tikan/EditCardModal/SideBar]]
+title: $:/EditCardModal/NewLabel
+type: text/vnd.tiddlywiki
+
+<ul>
+             
+
+<div>
+					Title: <$edit-text 
+							class="checklist-new-item-text checklist-text-h"                             
+                            tiddler="$:/state/newlabeltitle" 
+                            focus="yes" 
+                            tag="input" 
+                            placeholder='New label' 
+                            default=''/></div>
+<div>
+		Background colour:  <$edit-text 
+                                tiddler="$:/state/newlabeltitlecolor" 
+                                tag="input" 
+                                class="checklist-new-item-text checklist-text-width20"
+                                default=""
+                                placeholder="#ec6"
+                                />
+        						<$edit-text 
+                                tiddler="$:/state/newlabeltitlecolor" 
+                                tag="input" 
+                                class="colour-picker-input" 
+                                type="color"
+                                value="#ec6"/>
+                           
+                            </div>
+						<$macrocall 
+                        	$name='colour-picker-mod' 
+                            actions="<$action-setfield $tiddler='$:/state/newlabeltitlecolor' $value=<<colour-picker-value>>/>"/>
+							<$set name="bgcolor" value={{$:/state/newlabeltitlecolor}}>
+           		<$button class="smallgreenbutton">
+           		<$action-createtiddler $basetitle={{$:/state/newlabeltitle}} color=<<bgcolor>> tags="$:/Label"/>
+                <$action-setfield $tiddler="$:/state/labelaction" text=""/>
+                Save
+           		</$button>
+                <$button class="smallgreenbutton">           		
+                <$action-setfield $tiddler="$:/state/labelaction" text=""/>
+                Cancel
+           		</$button>
+           		</$set>
+            </ul>    

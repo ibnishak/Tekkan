@@ -1,0 +1,34 @@
+caption: Delete Labels
+created: 20170928192148446
+modified: 20170928193708488
+tags: 
+title: $:/EditCardModal/RemoveLabel
+type: text/vnd.tiddlywiki
+
+\define removeLabel()
+<$list filter="[tag[toRemove]]">
+<$list filter="[label<currentTiddler>]">
+<$action-setfield label=""/>
+</$list>
+</$list>
+<$action-deletetiddler $filter="[tag[toRemove]]"/>
+\end
+
+<div class="labellist" style="padding:10%;line-height: 25px;">
+<$list filter="[tag[$:/Label]]">
+                 <$checkbox tag="toRemove"><<currentTiddler>></$checkbox>
+</$list>
+</div>
+
+
+
+
+            <$button 
+                class="smallgreenbutton"
+                actions=<<removeLabel>>>                    
+                Remove
+            </$button>  
+            <$button 
+                class="smallgreenbutton">            
+                Cancel
+            </$button>

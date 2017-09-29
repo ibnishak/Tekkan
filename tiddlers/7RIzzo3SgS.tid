@@ -1,8 +1,8 @@
 caption: To do
 created: 20170927180421919
 filter: [tag<currentList>!tag[archive]has[priority]sort[priority]!has[draft.of]][tag<currentList>!tag[archive]!has[priority]!has[draft.of]]
-list: [[Label deletion ]] [[JSON editing for TS ]] [[Sort by label]] [[Sort by due date]] [[Remove u-fancy scroll bar ]] gYs7EcFmqk [[per board appearance]] [[flex down]]
-modified: 20170928181512518
+list: [[Label deletion ]] [[JSON editing for TS ]] [[Sort by label]] [[Sort by due date]] [[Remove u-fancy scroll bar ]] gYs7EcFmqk [[per board appearance]] [[flex down]] [[Board styling]] [[Tab styling]]
+modified: 20170929030741475
 tags: [[To do board]]
 title: 7RIzzo3SgS
 type: text/vnd.tiddlywiki

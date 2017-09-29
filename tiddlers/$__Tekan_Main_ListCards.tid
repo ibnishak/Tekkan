@@ -1,53 +1,51 @@
 created: 20170925021442475
-modified: 20170928092922895
+modified: 20170929030829999
 tags: $:/Tekan/Main
 title: $:/Tekan/Main/ListCards
 type: text/vnd.tiddlywiki
 
 <header>
-							<$draggable filter="[tag<currentList>!has[draft.of]]"> 
-                            	<$transclude tiddler=<<currentList>> field="caption">
-                            	<$view tiddler=<<currentList>> field="text"/> 
-                                </$transclude>
-                  				<$button 
-                                	tag="span" 
-                                    class="icon-sm icon-overflow-menu-horizontal listitem" 
-                                    popup=<<popupstate>>>
-                                </$button>
-                  <$reveal type="popup" position="below" state=<<popupstate>>>
-                            <div class="pop-over" style="right: auto;top: auto;">
-                            <div class="pop-over-header">
-                            	<span class="pop-over-header-title">List Actions</span>           
-                            </div>
-                            <div>
-                                <div class="pop-over-content">
-                                    <div>
-                                        <div>
-                                            <ul class="pop-over-list">
-                                               <$list filter="[tag[$:/Tekan/ListOpsButton]]">
-                                               <$transclude/>
-                                               </$list>
-                                               <hr style="border:none;border-bottom:1px solid lightgray">
-                                               <div style="font-size:smaller;color:#838c91;">sort</div>
-                                               <$list filter="[tag[$:/Tekan/ListSorterButton]]">
-                                               <$transclude/>
-                                               </$list>
-                                            </ul>
-                                            <hr style="border: none;border-bottom: 1px solid #ccc;">                  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            </div>
-                  </$reveal>
-              </$draggable>
-        </header>
+	<$draggable filter="[tag<currentList>!has[draft.of]]"> 
+		<$transclude tiddler=<<currentList>> field="caption">
+		<$view tiddler=<<currentList>> field="text"/> 
+    </$transclude>
+		<$button 
+    	tag="span" 
+        class="icon-sm icon-overflow-menu-horizontal listitem" 
+        popup=<<popupstate>>>
+    </$button>
+    <$reveal type="popup" position="below" state=<<popupstate>>>
+        <div class="pop-over" style="right: auto;top: auto;">
+        <div class="pop-over-header">
+        	<span class="pop-over-header-title">List Actions</span>           
+        </div>
+        <div>
+            <div class="pop-over-content">                
+                    <div>
+                        <ul class="pop-over-list">
+                           <$list filter="[tag[$:/Tekan/ListOpsButton]]">
+                           <$transclude/>
+                           </$list>
+                           <hr style="border:none;border-bottom:1px solid lightgray">
+                           <div style="font-size:smaller;color:#838c91;">sort</div>
+                           <$list filter="[tag[$:/Tekan/ListSorterButton]]">
+                           <$transclude/>
+                           </$list>
+                        </ul>
+                        <hr style="border: none;border-bottom: 1px solid #ccc;">                  
+                    </div>                
+            </div>
+        </div>
+        
+        </div>
+    </$reveal>
+  </$draggable>
+</header>
 
 
 
 <ul>
 <$set name="listfiltervar" filter="[<currentList>get[filter]]">
-         <$macrocall $name="listcards" listfilter=<<listfiltervar>>/>
-         </$set>
-			</ul>
+   <$macrocall $name="listcards" listfilter=<<listfiltervar>>/>
+</$set>
+</ul>

@@ -1,5 +1,5 @@
 created: 20170919045208973
-modified: 20170928171620312
+modified: 20170928200535902
 tags: $:/Tekan
 title: $:/Tekan/AddList
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 
 \define AddList()
 <$set name="random" filter="[[]make[RANDOM(10)]]">
-<$action-createtiddler $basetitle=<<random>> text=<<listname>> tags=<<boardnametag>> caption={{$:/state/newlisttemp}}/>
+<$action-createtiddler $basetitle=<<random>> text={{$:/state/newlisttemp}} tags=<<boardnametag>> caption={{$:/state/newlisttemp}}/>
 </$set>
 <$action-listops $tiddler=<<currentBoard>> $subfilter="[<boardandlist>]"/>
 <$action-setfield $tiddler="$:/state/newlisttemp" text=""/>

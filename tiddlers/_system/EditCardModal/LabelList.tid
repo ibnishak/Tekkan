@@ -1,0 +1,29 @@
+caption: Add Label to Card
+created: 20170928184228619
+modified: 20170928192512903
+tags: 
+title: $:/EditCardModal/LabelList
+type: text/vnd.tiddlywiki
+
+ <ul 
+		            class="pop-over-list label-list" 
+		            style="
+		            	display: -webkit-flex;
+		                display: flex;
+		                -webkit-flex-direction: row;
+		                flex-direction: row;
+		                flex-wrap:wrap;"
+		                padding: 20px;
+		                line-height:30px;>
+		                
+            <$list filter="[tag[$:/Label]]">
+              
+             <$button 
+		             class="tc-btn-invisible" 
+		             style="margin-right: 15px;margin-bottom:15px;min-width: 20%;"
+		             actions=<<addLabel>>>
+             <$macrocall $name="tag-pill" tag={{!!title}}/>
+             </$button>             
+            </$list>
+               
+            </ul>
