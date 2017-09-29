@@ -1,11 +1,13 @@
+caption: Label Modals
 created: 20170926174034161
-modified: 20170928193012434
+modified: 20170929040521694
 tags: $:/Tikan/EditCardModal/SideBar
 title: $:/Tikan/EditCardModal/SideBar/LabelModal
 type: text/vnd.tiddlywiki
 
 \define addLabel()
 <$action-setfield $tiddler=<<currentCard>> $field="label" $value=<<currentTiddler>>/>
+<$action-sendmessage $message="tm-close-tiddler"/>
 \end
 
 

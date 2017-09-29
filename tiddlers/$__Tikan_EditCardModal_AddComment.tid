@@ -1,6 +1,7 @@
+caption:  Edit Modal Add comment
 created: 20170925013404285
 list: $:/Tikan/EditCardModal/Header $:/Tikan/EditCardModal/AddComment $:/Tikan/EditCardModal/Checklist $:/Tikan/EditCardModal/SideBar
-modified: 20170926152747682
+modified: 20170929034957114
 tags: $:/Tikan/EditCardModal
 title: $:/Tikan/EditCardModal/AddComment
 type: text/vnd.tiddlywiki

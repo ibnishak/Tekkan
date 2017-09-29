@@ -1,17 +1,19 @@
+caption: Edit Modal Sidebar
 created: 20170925145058583
-modified: 20170927105634561
+modified: 20170929035721992
 tags: $:/Tikan/EditCardModal
 title: $:/Tikan/EditCardModal/SideBar
 type: text/vnd.tiddlywiki
 
 <div class="window-module u-clearfix">
-		<$button class="button-link" style="background: #EE6E73;color: #eee;">Delete
+		<$button class="button-link" style="background: #EE6E73;color: #eee;"
+        		tooltip="""Delete the card, its checklist and comments""">Delete
 			<$action-deletetiddler $tiddler=<<currentCard>>/>
             <$action-deletetiddler $filter="[tag<currentCard>]"/>
 			<$action-sendmessage $message="tm-close-tiddler"/>
             <$action-listops $tiddler=<<currentList>> $subfilter="+[remove<currentCard>]"/>
 		</$button>
-		<$button class="button-link">Archive Card
+		<$button class="button-link" tooltip="""Archive the card""">Archive Card
 			<$action-listops $tiddler=<<currentCard>> $tags="archive"/>
             <$action-listops $tiddler=<<currentList>> $subfilter="+[remove<currentCard>]"/>
 		</$button>
@@ -22,7 +24,7 @@ type: text/vnd.tiddlywiki
             Archive Checklist
         </$button>
         <$button 
-        	class="button-link">
+        	class="button-link" tooltip="""Add a label to the card""">
            		<$action-sendmessage 
                 $message="tm-modal" 
                 $param="$:/Tikan/EditCardModal/SideBar/LabelModal" 
@@ -36,10 +38,12 @@ type: text/vnd.tiddlywiki
             field="priority"
             placeholder="Due Date"/>
 		<$button 
-        	class="button-link">
+        	class="button-link" tooltip="""Save changes and close""">
             Done
 			<$action-sendmessage $message="tm-close-tiddler"/>
             <$action-setfield $tiddler="$:/state/editcardtitle" text=""/>
 		</$button>
-        
+        <$list filter="[tag[$:/Tikan/EditCardButton]]">
+        <$transclude/>
+        </$list>
 </div>

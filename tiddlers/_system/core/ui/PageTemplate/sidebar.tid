@@ -1,0 +1,33 @@
+created: 20170929031515136
+modified: 20170929041746302
+tags: TwelloMode
+title: $:/core/ui/PageTemplate/sidebar
+type: text/vnd.tiddlywiki
+
+<$scrollable fallthrough="no" class="tc-sidebar-scrollable">
+
+<div class="tc-sidebar-header">
+
+<$reveal state="$:/state/sidebar" type="match" text="yes" default="yes" retain="yes" animate="yes">
+
+<h1 class="tc-site-title">
+
+<$transclude tiddler="$:/SiteTitle" mode="inline"/>
+
+</h1>
+
+<div class="tc-site-subtitle">
+
+<$transclude tiddler="$:/SiteSubtitle" mode="inline"/>
+
+</div>
+
+{{||$:/core/ui/PageTemplate/pagecontrols}}
+
+<$transclude tiddler="$:/core/ui/SideBarLists" mode="inline"/>
+
+</$reveal>
+
+</div>
+
+</$scrollable>
