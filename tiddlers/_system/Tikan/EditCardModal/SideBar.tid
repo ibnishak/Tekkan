@@ -1,6 +1,6 @@
 caption: Edit Modal Sidebar
 created: 20170925145058583
-modified: 20170929035721992
+modified: 20170930055425873
 tags: $:/Tikan/EditCardModal
 title: $:/Tikan/EditCardModal/SideBar
 type: text/vnd.tiddlywiki
@@ -35,7 +35,7 @@ type: text/vnd.tiddlywiki
         	class="button-link"
             attributes="$:/Tikan/EditCardModal/SideBar/DueDateAttributes"
             tiddler=<<currentCard>>
-            field="priority"
+            field="duedate"
             placeholder="Due Date"/>
 		<$button 
         	class="button-link" tooltip="""Save changes and close""">

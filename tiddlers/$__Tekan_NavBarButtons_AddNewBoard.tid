@@ -1,5 +1,5 @@
 created: 20170923171442102
-modified: 20170923174713096
+modified: 20170930053320423
 tags: $:/Tekan/NavBarButtons $:/Tekan/Button
 title: $:/Tekan/NavBarButtons/AddNewBoard
 type: text/vnd.tiddlywiki
@@ -18,8 +18,9 @@ type: text/vnd.tiddlywiki
 		<div class="pop-over-content" style="max-height: 323px;">
 		<div>
 			<label>Title</label>
-                        <$edit-text class="list-name-input" tiddler="$:/state/boardNewTitle"  placeholder="What are you organizing?" default="New board" tag="input"/>
-
+            <$keyboard key="enter" actions=<<AddNewBoard>>>
+                        <$edit-text class="list-name-input" tiddler="$:/state/boardNewTitle"  placeholder="What are you organizing?" default="New board" tag="input" focus="yes"/>
+</$keyboard>
 			<div><$button style="background: -webkit-linear-gradient(top,#5AAC44 0,#519839 100%);background: linear-gradient(to bottom,#5AAC44 0,#519839 100%);" set="$:/state/newboardstate" setTo="" actions=<<AddNewBoard>>>Create New Board</$button></div>
 		</div>
 		</div>

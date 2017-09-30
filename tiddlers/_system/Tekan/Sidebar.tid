@@ -1,5 +1,6 @@
+caption: Sidebar
 created: 20170928170709949
-modified: 20170928180101754
+modified: 20170930092121359
 tags: $:/Tekan
 title: $:/Tekan/Sidebar
 type: text/vnd.tiddlywiki
@@ -15,8 +16,16 @@ type: text/vnd.tiddlywiki
 <$reveal state="$:/state/tekansidebar" type="match" text="show" class="animated fadeIn">
 
 <div class="sidebar">
-<div class="header"><span class="sidebartitle">Settings</span><$button class="tc-btn-invisible" style="float:right;fill:#acacac;" set="$:/state/tekansidebar" setTo="">{{$:/core/images/close-button}}</$button></div>
-
+<div class="header">
+      <span class="sidebartitle">Settings</span>
+      <$button 
+      		class="tc-btn-invisible" 
+      		style="float:right;fill:#acacac;" 
+            set="$:/state/tekansidebar" 
+            setTo="">{{$:/core/images/close-button}}
+ 	  </$button>
+</div>
+<hr>
 <div class="settingsbutton">
 <$reveal state="$;/state/scrolly" type="match" text="show">
 <$button set="$;/state/scrolly" setTo="" class="button-link">Scroll Y
@@ -28,8 +37,9 @@ type: text/vnd.tiddlywiki
 <$action-listops $tiddler="$:/Tekan/Palette/ScrollYStyles" $tags="-$:/tags/Stylesheet"/>
 </$button>
 </$reveal>
+<$list filter="[tag[$:/tags/SideBarButton]]"><$transclude/></$list>
 </div>
-
+<hr>
 <div class="palettebtn">
 <$set name="currentBoard" value={{$:/Tekan/CurrentBoard}}>
 <$list filter="[tag[$:/Tekan/Palette]]">

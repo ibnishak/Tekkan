@@ -1,6 +1,6 @@
 created: 20170911035313861
 creator: Riz
-modified: 20170925062449631
+modified: 20170929211215170
 modifier: Riz
 tags: $:/Tekan/Main/ListFooter
 title: $:/Tekan/AddCard
@@ -13,8 +13,8 @@ type: text/vnd.tiddlywiki
 \define addCard()
 <$set name="random" filter="[[]make[RANDOM(10)]]">
 <$action-createtiddler $basetitle=<<random>> text={{$:/NewNote}} tags=<<newHereButtonTags>> />
+<$action-listops $tiddler=<<currentList>> $subfilter=<<random>>/>
 </$set>
-<$action-listops $tiddler=<<currentList>> $subfilter="[{$:/NewNote}]"/>
 <$action-setfield $tiddler="$:/NewNote" text=""/>
 <$action-setfield $tiddler="$:/state/AddCard" text=""/>
 \end

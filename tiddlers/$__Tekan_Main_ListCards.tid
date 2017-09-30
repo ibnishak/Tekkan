@@ -1,5 +1,5 @@
 created: 20170925021442475
-modified: 20170929030829999
+modified: 20170930061710747
 tags: $:/Tekan/Main
 title: $:/Tekan/Main/ListCards
 type: text/vnd.tiddlywiki
@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 	<$draggable filter="[tag<currentList>!has[draft.of]]"> 
 		<$transclude tiddler=<<currentList>> field="caption">
 		<$view tiddler=<<currentList>> field="text"/> 
-    </$transclude>
+    	</$transclude>
 		<$button 
     	tag="span" 
         class="icon-sm icon-overflow-menu-horizontal listitem" 

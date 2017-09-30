@@ -1,6 +1,6 @@
 caption: Edit Modal Header
 created: 20170925150831760
-modified: 20170929040952678
+modified: 20170930054916766
 tags: $:/Tikan/EditCardModal
 title: $:/Tikan/EditCardModal/Header
 type: text/vnd.tiddlywiki
@@ -26,8 +26,10 @@ type: text/vnd.tiddlywiki
     <$reveal state="$:/state/editcardtitle" type="match" text="show">
     	<$edit-text class="mod-card-back-title overflow-hidden" tiddler=<<currentCard>> rows="2" minHeight="auto" focus="yes"/>
     </$reveal>
-	<div>in list "<b><$view tiddler=<<currentList>> field="caption"/></b>" 
+	<div>in list "<b><$transclude tiddler=<<currentList>> field="caption"><$view tiddler=<<currentList>> field="text"/></$transclude></b>"
     <$list filter="[<currentCard>!label[]]"> with label "<b><$view tiddler=<<currentCard>> field="label"/></b>"</$list>
     	<$list filter="[<currentCard>tag[archive]]">{{Archived||$:/core/ui/TagTemplate}}</$list>	
     </div>
 	</div>
+    
+    

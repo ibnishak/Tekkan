@@ -1,5 +1,5 @@
 created: 20170927114942793
-modified: 20170927120952521
+modified: 20170930072929531
 tags: $:/Tekan/Main/ListCards
 title: $:/Tekan/AboveCard
 type: text/vnd.tiddlywiki
@@ -8,4 +8,9 @@ type: text/vnd.tiddlywiki
 <$reveal state=!!label type="nomatch" text="">
 <$macrocall $name="tag-pill" tag={{!!label}}/>
 </$reveal>
+
+<$list filter="[tag<currentTiddler>!tag[$:/Label]limit[1]]" variable="checklistpresent">
+&#x2714; <$count filter="[tag<currentTiddler>!tag[$:/Label]tag[done]]"/>/<$count filter="[tag<currentTiddler>!tag[$:/Label]]"/>
+</$list>
+
 </div>

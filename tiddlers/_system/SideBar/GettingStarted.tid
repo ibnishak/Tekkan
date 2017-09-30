@@ -1,0 +1,65 @@
+caption: Getting Started
+created: 20170929191901987
+modified: 20170930063843524
+tags: $:/Tekan/Sidebar
+title: $:/SideBar/GettingStarted
+type: text/vnd.tiddlywiki
+
+ <div class="pop-over" style="right: auto;top: auto;position: relative;width: 100%;height: 100%;">
+    <div class="pop-over-header">
+    	<span class="pop-over-header-title">Getting Started</span>         
+    </div>
+    <div>
+        <div class="pop-over-content">
+            <div>
+                <ul>
+                    <div>
+                    	<span class="quiet col1"><span>Title:&nbsp;&nbsp;</span></span>  
+                        <$edit-text 
+                    			class="checklist-new-item-text checklist-text-h border-textbox"                             
+                                tiddler="$:/SiteTitle" 
+                                focus="yes" 
+                                tag="input" 
+                                placeholder='Title' 
+                                default=''/>
+                    </div>
+                    <hr>
+                     <div>
+                    	<span class="quiet col1">Subtitle:&nbsp;&nbsp;</span>  
+                        <$edit-text 
+                    			class="checklist-new-item-text checklist-text-h border-textbox"                             
+                                tiddler="$:/SiteSubtitle" 
+                                focus="no" 
+                                tag="input" 
+                                placeholder='Subtitle' 
+                                default=''/>
+                    </div>
+                    <hr>
+                    <div>
+                    	<span class="quiet col1">Author:&nbsp;&nbsp;</span>  
+                        <$edit-text 
+                    			class="checklist-new-item-text checklist-text-h border-textbox"                             
+                                tiddler="$:/status/UserName" 
+                                focus="no" 
+                                tag="input" 
+                                placeholder='Your name' 
+                                default=''/>
+                    </div>
+                    <hr>
+                    <div>
+                    	<span class="quiet col1">Animations:&nbsp;&nbsp;</span>  
+                          <$tiddler tiddler="$:/Animate.css">
+                          <$radio class="inlinelabel" field="tags" value="$:/tags/Stylesheet"> Keep them</$radio>
+                          <$radio class="inlinelabel" field="tags" value="$:/TurnedOff"> Turn them off</$radio>
+                          </$tiddler>
+                    </div>
+                </ul>    
+            </div>
+            <hr style="border: none;border-bottom: 1px solid #ccc;">
+        </div>
+    </div>    
+</div>
+    <$button class="button-link" style="float: right;width: 40%;margin-bottom: 20px;"> 
+    	<$action-sendmessage $message="tm-close-tiddler"/>
+     	Close
+    </$button>

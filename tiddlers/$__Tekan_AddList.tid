@@ -1,6 +1,6 @@
 caption: Add List
 created: 20170919045208973
-modified: 20170929040425417
+modified: 20170930052931081
 tags: $:/Tekan
 title: $:/Tekan/AddList
 type: text/vnd.tiddlywiki
@@ -60,7 +60,7 @@ type: text/vnd.tiddlywiki
 <div class="list list-wrapper-add">
     
     <$keyboard key="enter" actions=<<AddList>> tag="div">
-	<$edit-text default="New list" class="list-name-input" tiddler="$:/state/newlisttemp" placeholder="Add a list…" tag="input"/>
+	<$edit-text default="New list" class="list-name-input" tiddler="$:/state/newlisttemp" placeholder="Add a list…" tag="input" focus="yes"/>
     </$keyboard>
    
 	<$button class="smallgreenbutton" actions=<<AddList>>>Add list</$button>

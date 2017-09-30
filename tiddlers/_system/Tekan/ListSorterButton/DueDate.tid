@@ -1,10 +1,10 @@
 created: 20170928093626803
-modified: 20170928093748404
+modified: 20170930055339652
 tags: $:/Tekan/ListSorterButton
 title: $:/Tekan/ListSorterButton/DueDate
 type: text/vnd.tiddlywiki
 
 <$button 
 tag="li" 
-actions="""<$action-setfield $tiddler=<<currentList>> filter="[tag<currentList>!tag[archive]has[priority]sort[priority]!has[draft.of]][tag<currentList>!tag[archive]!has[priority]!has[draft.of]]"/>""">
+actions="""<$action-setfield $tiddler=<<currentList>> filter="[tag<currentList>!tag[archive]has[duedate]sort[duedate]!has[draft.of]][tag<currentList>!tag[archive]!has[duedate]!has[draft.of]]"/>""">
 Due Date</$button>

@@ -40,7 +40,9 @@ margin: 0;
 
 .lists {
 	display: -webkit-box;
-	display: -ms-flexbox;
+	display: -ms-flexbox
+  	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  	display: -webkit-flex;     /* NEW - Chrome */
 	display: flex;
 	overflow-x: auto;
 
@@ -204,7 +206,7 @@ footer textarea {
   	position: absolute;
 	right: 3px;
 	top: 3px;
-  	z-index: 40; 
+  	/*z-index: 40; */
 	border-radius: 3px;
 	padding: 4px;	}
 	.listitem:hover { background-color: #D6DADC; }
@@ -658,16 +660,16 @@ footer textarea {line-height: 22px;}
 	width: 280px;
 	overflow: hidden;
 	border: 1px solid #bbb;
-    border-radius: 0 3px 3px 0;
+	border-radius: 5px;
 	background-color: #ffffff;
 	padding: 7px 0 7px 0;
-	margin: 4px 0 0 0;
+	margin: 10px 0 0 0;
 	white-space: nowrap;
 	text-shadow: none;
-    top: 45px;
+	top: 45px;
 	z-index: 60;
 	line-height: 1.4;
-    box-shadow: 0 3px 6px rgba(0,0,0,.4);
+	box-shadow: 0 3px 6px rgba(0,0,0,.4);
 }
 .whitebgdropdown a, .whitebgdropdown button {
 	display: block;

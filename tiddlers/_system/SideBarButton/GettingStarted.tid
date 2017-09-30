@@ -1,0 +1,7 @@
+created: 20170929193032064
+modified: 20170929193808549
+tags: $:/tags/SideBarButton
+title: $:/SideBarButton/GettingStarted
+type: text/vnd.tiddlywiki
+
+<$button message="tm-modal" param="$:/SideBar/GettingStarted" class="button-link">Details</$button>

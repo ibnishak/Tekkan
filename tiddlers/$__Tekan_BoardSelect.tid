@@ -1,5 +1,6 @@
+caption: Board Select
 created: 20170910194902289
-modified: 20170929032959880
+modified: 20170929203757726
 tags: $:/Tekan/NavBar
 title: $:/Tekan/BoardSelect
 type: text/vnd.tiddlywiki
@@ -8,18 +9,26 @@ type: text/vnd.tiddlywiki
 <$action-setfield $tiddler="$:/Tekan/CurrentBoard" text=<<currentTiddler>>/>
 \end
 
+\define listboard(bg:"#0079BF")
+ <$button style="background: #fff;" actions=<<setboard>>>
+       <div class="compact-board-tile-wrapper">
+       <span class="simplesquare" style="background-color:$bg$;">&nbsp;</span>
+       <span class="compact-board-tile-fade">{{!!title}}</span>
+       </div>
+</$button>
+\end
+
 
 <$button popup=<<qualify "$:/state/popup/board">>>Board</$button>
-<$reveal state=<<qualify "$:/state/popup/board">> type="popup" position="below" animate="yes">
+<$reveal state=<<qualify "$:/state/popup/board">> type="popup" position="below" animate="yes" class="animated fadeIn">
     <div class="whitebgdropdown">
+      <div class="sidebar-section-header quiet">
+                        <span style="font-size:12px">Your Boards</span>                       
+                    </div>
         <$list filter="[tag[$:/tags/Tekanboard]!has[draft.of]]">
-        <div style="height:30px;"></div>
-          <$button style="background: #fff;" actions=<<setboard>>>
-              <div class="compact-board-tile-wrapper">
-                <span class="simplesquare" style="background-color: #0079BF;">&nbsp;</span>
-                <span class="compact-board-tile-fade">{{!!title}}</span>
-              </div>
-          </$button>
+        <$set name="themebg" filter="[{!!theme}getindex[bg]]">
+        <$macrocall $name="listboard" bg=<<themebg>>/>
+         </$set>
         </$list>
     </div>
 </$reveal>

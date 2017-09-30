@@ -1,0 +1,15 @@
+created: 20170930061825480
+modified: 20170930062646673
+tags: $:/Tekan/ListOpsButton
+title: $:/Tekan/ListOpsButton/CustomFilter
+type: text/vnd.tiddlywiki
+
+\define customfiltermodal()
+<$action-sendmessage $message="tm-modal" $param="$:/Tekan/ListOps/CustomFilter" currentList=<<currentList>>/>
+\end
+
+<$button 
+tag="li" 
+actions=<<customfiltermodal>>>
+Customise Filter
+</$button>

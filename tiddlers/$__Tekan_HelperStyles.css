@@ -9,6 +9,10 @@
   height: 48px;
   width: 70%;
 	}
+.border-textbox {
+	border: 1px solid bisque;
+	padding: 0 10px;
+}
 .view-comment-area {
 	margin-bottom: 3%;
 }
@@ -113,7 +117,7 @@ ul.pop-over-list.label-list li:hover {
 	right: 0;
 	bottom: 0;
 	height: 100%;
-	width: 20%;
+	width: 25%;
 	background-color: #EDEFF0;
 	z-index: 100;
 	color: #333;
@@ -123,7 +127,7 @@ ul.pop-over-list.label-list li:hover {
 
 .sidebar .header {
 	line-height: 20px;
-	margin: 13px 30px 9pt;
+	margin: 15% 10% 5%;
 	overflow: hidden;
 	text-align: center;
 	text-overflow: ellipsis;
@@ -156,3 +160,26 @@ ul.pop-over-list.label-list li:hover {
     font-weight: bold;
     color: #DB4C3F !important;
 }
+
+hr {
+	background: #D6DADC;
+	border: 0;
+	color: #D6DADC;
+	height: 1px;
+	margin: 1pc 0;
+	width: 100%;
+}
+
+.sidebar-section-header {
+	margin: 1pc 30px 10px 8px;
+	position: relative;
+}
+.quiet{
+	color: #838c91;
+}
+.col1 {
+	width: 10%;
+	display: inline-block;
+}
+
+.inlinelabel {display:inline}

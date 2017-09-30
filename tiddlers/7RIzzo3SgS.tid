@@ -1,9 +1,0 @@
-caption: To do
-created: 20170927180421919
-filter: [tag<currentList>!tag[archive]has[priority]sort[priority]!has[draft.of]][tag<currentList>!tag[archive]!has[priority]!has[draft.of]]
-list: [[Label deletion ]] [[JSON editing for TS ]] [[Sort by label]] [[Sort by due date]] [[Remove u-fancy scroll bar ]] gYs7EcFmqk [[per board appearance]] [[flex down]] [[Board styling]] [[Tab styling]] [[One click add label]] [[try changing tc modal]]
-modified: 20170929041804556
-tags: [[To do board]]
-title: 7RIzzo3SgS
-type: text/vnd.tiddlywiki
-
