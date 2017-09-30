@@ -1,6 +1,6 @@
 caption: Edit Modal Sidebar
 created: 20170925145058583
-modified: 20170930055425873
+modified: 20170930111344745
 tags: $:/Tikan/EditCardModal
 title: $:/Tikan/EditCardModal/SideBar
 type: text/vnd.tiddlywiki
@@ -41,6 +41,7 @@ type: text/vnd.tiddlywiki
         	class="button-link" tooltip="""Save changes and close""">
             Done
 			<$action-sendmessage $message="tm-close-tiddler"/>
+            <$action-sendmessage $message="tm-auto-save-wiki"/>
             <$action-setfield $tiddler="$:/state/editcardtitle" text=""/>
 		</$button>
         <$list filter="[tag[$:/Tikan/EditCardButton]]">

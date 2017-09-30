@@ -1,6 +1,6 @@
 caption: Getting Started
 created: 20170929191901987
-modified: 20170930063843524
+modified: 20170930111113089
 tags: $:/Tekan/Sidebar
 title: $:/SideBar/GettingStarted
 type: text/vnd.tiddlywiki
@@ -59,7 +59,7 @@ type: text/vnd.tiddlywiki
         </div>
     </div>    
 </div>
-    <$button class="button-link" style="float: right;width: 40%;margin-bottom: 20px;"> 
+    <$button message="tm-auto-save-wiki" class="button-link" style="float: right;width: 40%;margin-bottom: 20px;"> 
     	<$action-sendmessage $message="tm-close-tiddler"/>
      	Close
     </$button>

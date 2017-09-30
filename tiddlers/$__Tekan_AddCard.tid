@@ -1,6 +1,6 @@
 created: 20170911035313861
 creator: Riz
-modified: 20170929211215170
+modified: 20170930112530943
 modifier: Riz
 tags: $:/Tekan/Main/ListFooter
 title: $:/Tekan/AddCard
@@ -17,6 +17,7 @@ type: text/vnd.tiddlywiki
 </$set>
 <$action-setfield $tiddler="$:/NewNote" text=""/>
 <$action-setfield $tiddler="$:/state/AddCard" text=""/>
+<$action-sendmessage $message="tm-auto-save-wiki"/>
 \end
 
 \define cancelCard()

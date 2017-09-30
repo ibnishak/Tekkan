@@ -1,0 +1,7 @@
+created: 20170930113246995
+modified: 20170930113523942
+tags: $:/Tekan/NavBarButtons $:/Tekan/Button
+title: $:/Tekan/NavBarButtons/Save
+type: text/vnd.tiddlywiki
+
+<$button tooltip="Save" message="tm-auto-save-wiki" style="fill:#fff;">{{$:/core/images/save-button}}</$button>
