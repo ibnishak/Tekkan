@@ -17,7 +17,7 @@
 
 Tekkan One is a cross-platform Kanban solution that can be used offline. Tekkan One was created using  <a href="http://tiddlywiki.com/" target="_blank">TW5</a>
 
-While one-click solutions are still shaping up, you can definitely use this in all platforms where you can run a browser - say Windows, Linux, Mac OS, Andoid and so on with the help of Node JS based <a href="https://github.com/Arlen22/TiddlyServer" target="_blank">~TiddlyServer</a>.
+While one-click solutions are still shaping up, you can definitely use this in all platforms where you can run a browser - say Windows, Linux, Mac OS, Andoid and so on with the help of Node JS based <a href="https://github.com/Arlen22/TiddlyServer" target="_blank">TiddlyServer</a>.
 
 
 ### How to install
