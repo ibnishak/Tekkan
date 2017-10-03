@@ -1,5 +1,5 @@
-<a href="https://ibnishak.github.io/Tekkan/Tekkan%20Demo.html" style="color:#e60909;" target="_blank">Demo</a>
-<a href="https://ibnishak.github.io/Tekkan/" style="color:#e60909;" target="_blank">Documentation</a>
+* <a href="https://ibnishak.github.io/Tekkan/Tekkan%20Demo.html" style="color:#e60909;" target="_blank">Demo</a>
+* <a href="https://ibnishak.github.io/Tekkan/" style="color:#e60909;" target="_blank">Documentation</a>
 
 
 **New in Tekkan One**
