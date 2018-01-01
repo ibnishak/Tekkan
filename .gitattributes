@@ -1,1 +1,2 @@
-*.tid linguist-language=Javascript
+*.tid linguist-language=JavaScript
+*.multids linguist-language=JavaScript
